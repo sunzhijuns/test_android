@@ -1,139 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:orientation="vertical">
 
-    <TableRow
-        android:id="@+id/r1"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/blockbg_big">
-
-            <TextView
-                android:id="@+id/r11"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="time"></TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/blockbg_big"
-            android:padding="40px">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/img01" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="50px"
-                android:layout_weight="1"
-                android:src="@drawable/img02" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="50px"
-                android:layout_weight="1"
-                android:src="@drawable/img03" />
-        </LinearLayout>
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/r2"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/blockbg_big"
-            android:padding="40px">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/img04" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="40px"
-                android:layout_weight="1"
-                android:src="@drawable/img05" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="40px"
-                android:layout_weight="1"
-                android:src="@drawable/img06" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/blockbg_big">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="40px"
-                android:src="@drawable/img07" />
-
-            <TextView
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="转到音乐" />
-
-        </LinearLayout>
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/r3"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@drawable/blockbg_big">
-        <LinearLayout
+        android:scaleType="centerCrop"
+        android:src="@drawable/top" />
 
-            android:layout_marginLeft="20px"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="20px"
-                android:src="@drawable/email" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="20px"
-                android:gravity="center_vertical"
-                android:textSize="45px"
-                android:text="电子邮件" />
-        </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bottom">
 
-    </TableRow>
+        <ImageView
+            android:id="@+id/imageBtn0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/in" />
+        <ImageView
+            android:id="@+id/imageBtn1"
+            android:layout_above="@+id/imageBtn0"
+            android:layout_alignRight="@+id/imageBtn0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/setting" />
+        <ImageView
+            android:id="@+id/imageBtn2"
+            android:layout_below="@+id/imageBtn0"
+            android:layout_alignLeft="@+id/imageBtn0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/exit" />
+        <ImageView
+            android:id="@+id/imageBtn3"
+            android:layout_toLeftOf="@+id/imageBtn0"
+            android:layout_alignTop="@+id/imageBtn0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/help" />
+        <ImageView
+            android:id="@+id/imageBtn4"
+            android:layout_toRightOf="@+id/imageBtn0"
+            android:layout_alignTop="@+id/imageBtn0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/board" />
+    </RelativeLayout>
 
-
-</TableLayout>
+</LinearLayout>
