@@ -1,3 +1,5 @@
 <resources>
+    <string name="title">使用xml布局文件控制</string>
+    <string name="start">单击开始</string>
     <string name="app_name">SZJGames</string>
 </resources>
