@@ -15,6 +15,8 @@ public class Node {
     }
 
     private int id;
+
+    public static int RootPID = 0;
     /**
      * 根节点的pid=0
      */

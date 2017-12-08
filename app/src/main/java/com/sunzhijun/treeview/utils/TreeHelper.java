@@ -1,5 +1,8 @@
 package com.sunzhijun.treeview.utils;
 
+import android.util.Log;
+
+import com.example.sunzhijun.szjgames.R;
 import com.sunzhijun.treeview.utils.annotation.TreeNodeId;
 import com.sunzhijun.treeview.utils.annotation.TreeNodeLabel;
 import com.sunzhijun.treeview.utils.annotation.TreeNodePid;
@@ -61,6 +64,93 @@ public class TreeHelper {
                 }
             }
         }
-        return null;
+        //
+        for (Node n : nodes){
+            setNodeIcon(node);
+        }
+        return nodes;
+    }
+
+    /**
+     * 为node设置icon
+     * @param n
+     */
+    private static void setNodeIcon(Node n){
+        if (n.getChildren().size()>0){
+            if (n.isExpand()){
+                n.setIcon(R.drawable.tree_ex);
+            }else{
+                n.setIcon(R.drawable.tree_ec);
+            }
+
+        }else{
+            n.setIcon(-1);
+        }
+    }
+
+    public static<T> List<Node> getSortedNodes(List<T> datas, int defaultExpandLevel) throws IllegalAccessException {
+        List<Node> result = new ArrayList<Node>();
+        List<Node> nodes = convertDatas2Nodes(datas);
+        List<Node> rootNodes = getRootNodes(nodes);
+
+        System.out.println(rootNodes);
+
+        for (Node node :rootNodes){
+            addNode(result, node, defaultExpandLevel, 1);
+        }
+
+        return result;
+    }
+
+    /**
+     * 把一个节点的所有孩子节点都放入result
+     * @param result
+     * @param node
+     * @param defaultExpandLevel
+     * @param currentLevel
+     */
+    private static void addNode(List<Node> result, Node node, int defaultExpandLevel, int currentLevel) {
+        result.add(node);
+        if (defaultExpandLevel >= currentLevel){
+            node.setExpand(true);
+        }
+        if (node.isLeaf())
+            return;
+
+        for (int i = 0; i < node.getChildren().size(); i++) {
+            addNode(result,node.getChildren().get(i),defaultExpandLevel,currentLevel+1);
+        }
+    }
+
+    /**
+     * 过滤出可见节点
+     * @param nodes
+     * @return
+     */
+    public static List<Node> filterVisibleNodes(List<Node> nodes){
+        List<Node> result = new ArrayList<Node>();
+        for (Node node : nodes){
+            if (node.isRoot() || node.isParentExpand()){
+                setNodeIcon(node);
+                result.add(node);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 从所有节点中过滤出根节点
+     * @param nodes
+     * @return
+     */
+    private static List<Node> getRootNodes(List<Node> nodes) {
+
+        List<Node> root = new ArrayList<Node>();
+        for (Node node :nodes){
+            if (node.isRoot()){
+                root.add(node);
+            }
+        }
+        return root;
     }
 }
