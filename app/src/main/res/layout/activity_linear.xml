@@ -5,32 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:orientation="horizontal">
+    android:orientation="vertical">
     <TextView
-        android:background="#FF00FF"
-        android:text="one"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="match_parent" />
-    <TextView
-        android:background="#FF0000"
-        android:text="two"
-        android:layout_weight="2"
-        android:layout_width="0dp"
-        android:layout_height="match_parent" />
-    <TextView
-        android:background="#FFFF00"
-        android:text="
-原有宽度 0L
-剩余宽度 L - 0L = L
-原有宽度 + 剩余宽度 * 比例
-0L + L * 1/6 = 1/6L
-0L + L * 2/6 = 1/3L
-0L + L * 3/6 = 1/2L
-"
-        android:layout_weight="3"
-        android:layout_width="0dp"
-        android:layout_height="match_parent" />
+        android:text="ddddddd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#FF0000"/>
 
 
 </LinearLayout>
